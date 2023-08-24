@@ -1,0 +1,156 @@
+header {
+    padding: 55px 0px 15px 0;
+    background-color: $default-color;
+    
+    @include breakpoint(xs){
+        padding: 20px 0px 20px 0;
+    }
+
+    .container {    
+        max-width: 1310px;
+        position: relative;
+        z-index: 999;
+    }
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+
+        .brand-logo {
+            display: flex;
+            align-items: center; 
+            justify-content: flex-start;
+            max-width: 135px;
+            width: 100%;
+
+            .logo {
+                @include xbold;
+                @include font(16);
+                display: flex;
+                align-items: center;
+                color: #fff;
+
+                svg{
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .toggler {
+            padding: 0.25rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+            width: fit-content;
+
+            @include breakpoint(lg){
+                display: none;
+            }
+            
+            .toggler-icon {
+                background-image: url(../Logo/bars.svg);
+                display: inline-block;
+                width: 1.5em;
+                height: 1.5em;
+                vertical-align: middle;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+                transition: all 0.3s ease-in-out;
+
+                &.close {
+                    background-image: url(../Logo/close.svg);
+                }
+            }
+        }
+
+        .nav-bar {
+            align-items: center;
+            list-style: none;
+            margin: 0;
+
+            @include breakpoint(xs){
+                flex-direction: column;
+                width: 100vw;
+                height: 100vh;
+                padding-top: 30px;
+                background-color: $default-color;
+                position: absolute;
+                top: 50px;
+                left: -15px;
+                text-align: center;
+                transform: translatex(-100vw);
+                transition: all 0.3s ease-in-out;
+            }
+            @include breakpoint(lg){
+                display: flex;
+                flex-direction: row;
+                width: auto;
+                height: auto;
+                padding: 0;
+                background-color: transparent;
+                position: relative;
+                top: 0;
+                left: 0;
+                text-align: left;
+                transform: translatex(0);
+            }
+
+            li {
+
+                a {
+                    @include light;
+                    @include font(14);
+                    text-transform: uppercase;
+                    color: #fff;
+                    font-family: 'DM Sans', sans-serif;
+                    transition: 0.2s all ease-in-out;
+                    
+                    &:hover {
+                        color: $theme;
+                    }
+                }
+
+                &:not(:last-child){
+
+                    @include breakpoint(xs) {
+                        margin: 0 0 15px 0;
+                        padding: 0;
+                    }
+
+                    @include breakpoint(lg) {
+                        margin:0;
+                        padding: 0 42px 0 0;
+                    }
+                }
+            }
+
+            &.visible {
+                transform: translateX(0);
+            }
+        }
+
+        .btn-wrapper {
+
+            @include breakpoint(xs){
+                display: none;
+            }
+            @include breakpoint(lg){
+                display: flex;
+            }
+            
+            .header-btn {
+                    transition: all 0.3s ease-in;
+                &:hover {
+                    background-color: $theme;
+                    color: #fff;
+                }
+
+            }
+        }
+
+    }
+}

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=DM+Sans:opsz@9..40&family=Inter:wght@200;300&family=Playfair+Display:wght@700&family=Poppins:ital,wght@0,400;0,600;1,500&display=swap');
+$default-color : #222831;
+
+body,a,p,h1,h2,h3,h4,h5,h6{
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  color : $default-color;
+}
+a{
+  text-decoration: none;
+}
+*{
+  box-sizing: border-box;
+}

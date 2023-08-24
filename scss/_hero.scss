@@ -1,0 +1,157 @@
+.hero {
+    background-color: $default-color;
+    position: relative;
+
+    @include breakpoint(xs){
+        padding-top: 30px;
+        padding-bottom: 80px;
+    }
+
+    @include breakpoint(md){
+        padding-top: 50px;
+        padding-bottom: 150px;
+    }
+
+    @include breakpoint(lg){
+        padding-top: 50px;
+        padding-bottom: 300px;
+    }
+
+    .hero-details {
+        display: flex;
+        justify-content: space-between;
+
+        @include breakpoint(xs){
+            flex-direction: column;
+        }
+
+        @include breakpoint(md){
+            flex-direction: row;
+            align-items: center;
+        }
+
+        h1 {
+            @include xbold;
+            color: #FFF;
+            font-family: 'Playfair Display', serif;
+            max-width: 585px;
+            width: 100%;
+
+            span {
+                color: $theme;
+            }
+
+            @include breakpoint(xs){
+                @include font(34);
+            }
+
+            @include breakpoint(sm){
+                @include font(40);
+            }
+
+            @include breakpoint(md){
+                @include font(42);
+            }
+
+            @include breakpoint(lg){
+                @include font(50);
+            }
+
+            @include breakpoint(xl){
+                font-size: 64px;
+                line-height: 150%;
+            }
+        }
+        .description {
+            max-width: 490px;
+            width: 100%;
+
+            @include breakpoint(md) {
+                margin-left: 10px;
+            }
+
+            p {
+                @include light;
+                color: rgba(255, 255, 255, 0.70);
+                font-family: 'DM Sans', sans-serif;
+                letter-spacing: 0.3px;
+
+                @include breakpoint(xs){
+                    @include font(14);
+                    margin-bottom: 15px;
+                }
+
+                @include breakpoint(md){
+                    @include font(16);
+                }
+
+                @include breakpoint(lg){
+                    margin-bottom: 35px;
+                }
+            }
+
+            a {
+                @include xbold;
+                color: #00D0B0;
+                font-family: 'DM Sans', sans-serif;
+                letter-spacing: 6px;
+                text-decoration-line: underline;
+
+                @include breakpoint(xs){
+                    @include font(10);
+                }
+
+                @include breakpoint(lg){
+                    @include font(12);
+                }
+            }
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -117px;
+        right: 0;
+        background: #4F8A8B;
+        filter: blur(125px);
+
+        @include breakpoint(xs){
+            width: 100px;
+            height: 100px;
+        }
+        @include breakpoint(md){
+            width: 200px;
+            height: 200px;
+        }
+        @include breakpoint(lg){
+            width: 300px;
+            height: 300px;
+        }
+    }
+
+    &::before {
+        content: '';
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        bottom: 0px;
+        background: #4F8A8B;
+        filter: blur(125px);
+
+        @include breakpoint(xs){
+            width: 100px;
+            height: 100px;
+            left: 0;
+        }
+        @include breakpoint(md){
+            width: 200px;
+            height: 200px;
+        }
+        @include breakpoint(lg){
+            width: 300px;
+            height: 300px;
+            left: -150px;
+        }
+    }
+}

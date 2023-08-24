@@ -1,0 +1,26 @@
+@mixin light(){
+    font-weight: 400;
+}
+@mixin semibold(){
+    font-weight: 500;
+}
+@mixin bold(){
+    font-weight: 600;
+}
+@mixin xbold(){
+    font-weight: 700;
+}
+
+@mixin font($size){   
+    @if type-of($size) == 'string' {
+    font-size: $size;
+    line-height: size + 10px;
+    } 
+    @else if type-of($size) == 'number' {
+    font-size: $size * 1px;
+    line-height: ($size + 10) * 1px;
+    } 
+    @else {
+        @content;
+    }
+}

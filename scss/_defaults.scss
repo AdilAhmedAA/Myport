@@ -1,0 +1,81 @@
+$primary : #0F0B33;
+$theme : #00D0B0;
+
+.container{
+    max-width: 1230px;
+    width: 100%;
+    padding:  0 15px;
+    margin: 0 auto;
+  }
+  
+  .global-btn{
+    min-height: 5px;
+    padding: 15px 35px;
+    border: none;
+    color: $primary;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint(xs){
+      flex-direction: column;
+    }
+
+    h2 {
+        @include xbold;
+        color: $primary;
+        font-family: 'Playfair Display', serif;
+      
+        @include breakpoint(xs) {
+          @include font(24);
+        }
+        
+        @include breakpoint(sm) {
+          @include font(28);
+        }
+
+        @include breakpoint(md) {
+          @include font(30);
+        }
+
+        @include breakpoint(lg) {
+          @include font(32);
+        }
+    }
+
+    p {
+        color: rgba(34, 40, 49, 0.60);
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 400;   
+        letter-spacing: 0.3px;
+
+        @include breakpoint(xs){
+          @include font(14);
+        }
+
+        @include breakpoint(md){
+          @include font(16);
+        }
+    }
+}
+.section-name {
+  @include semibold;
+  color: #00D0B0;
+  font-family: 'DM Mono', monospace;
+  margin-bottom: 20px;
+
+  @include breakpoint(xs){
+      @include font(14);
+  }
+
+  @include breakpoint(md){
+      @include font(16);
+  }
+}
